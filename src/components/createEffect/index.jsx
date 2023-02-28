@@ -12,6 +12,8 @@ const CreateEffect = () => {
     onMount(() => {
         // console.log(count());
     });
+
+    //clean up function
     createEffect(() => {
         const handleScroll = () => {
             setShow(window.scrollY >= 100);
@@ -22,6 +24,14 @@ const CreateEffect = () => {
             return window.removeEventListener('scroll', handleScroll);
         });
     });
+
+    //called before render
+    // queueMicrotask(() => {
+    //     console.log('microtask');
+    //     setCount(3); // immediately prints `count = 3`
+    //     console.log('goodbye');
+    // });
+
     const handleIncrease = () => {
         setCount((prev) => ++prev);
         // setCount((prev) => ++prev);
