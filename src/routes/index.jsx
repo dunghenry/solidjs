@@ -6,17 +6,20 @@ import CreateMemo from '~/components/createMemo';
 import Props from '~/components/props';
 import Main from '~/components/children';
 import LoadingData from '~/components/loadingData';
+import { CounterProvider } from '~/CounterContext';
 export default function Home() {
     return (
         <main>
             <Title>Hello World</Title>
-            <h1>Hello world!</h1>
             {/* <CreateSignal /> */}
             {/* <CreateEffect /> */}
             {/* <CreateMemo /> */}
             {/* <Props title="Props" /> */}
             {/* <Main /> */}
-            <LoadingData />
+            <CounterProvider>
+                <h1>Hello world!</h1>
+                <LoadingData />
+            </CounterProvider>
         </main>
     );
 }
